@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="20625f87-d3f0-4b70-b2f0-635dfe4bd10c" >
+		<http:listener-connection host="0.0.0.0" port="8084" />
+	</http:listener-config>
+	<flow name="democicdFlow" doc:id="6f780c53-2bd0-4217-a0ec-1a25fc634932" >
+		<http:listener doc:name="Listener" doc:id="22f39722-68d6-40e7-a493-9cb5ca9cac68" config-ref="HTTP_Listener_config" path="/democicd"/>
+		<logger level="INFO" doc:name="Logger" doc:id="042fb236-438b-45d4-8a45-8e5072591821" message='"democicd"'/>
+	</flow>
+</mule>
